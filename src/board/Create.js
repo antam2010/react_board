@@ -11,7 +11,7 @@ function Create() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post(`http://localhost:4000/board`, { title, content })
+    axios.post(`http://localhost:8081/board`, { title, content })
       .then(() => {
         navigate('/board'); 
       })

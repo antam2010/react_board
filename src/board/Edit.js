@@ -12,7 +12,7 @@ function Edit() {
 
   useEffect(() => {
     // 게시글 데이터를 불러옵니다.
-    axios.get(`http://localhost:4000/board/${id}`)
+    axios.get(`http://localhost:8081/board/${id}`)
       .then(response => {
         const data = response.data;
         setTitle(data.title);
@@ -26,7 +26,7 @@ function Edit() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // 수정된 게시글 데이터를 서버에 전송합니다.
-    axios.put(`http://localhost:4000/board/${id}`, { title, content })
+    axios.put(`http://localhost:8081/board/${id}`, { title, content })
       .then(() => {
         navigate('/board'); // 성공적으로 수정되면 목록 페이지로 이동
       })

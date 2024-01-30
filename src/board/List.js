@@ -8,7 +8,7 @@ function List() {
   const [posts, setPosts] = useState([]);
 
   const getList = () => {
-    axios.get('http://localhost:8081/board')
+    axios.get('http://175.212.136.236:8081/board')
     .then(response => {
       setList(response.data); // 데이터를 상태에 저장합니다.
     })
@@ -23,7 +23,7 @@ function List() {
 
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:8081/board/${id}`)
+    axios.delete(`http://175.212.136.236:8081/board/${id}`)
       .then(() => {
         getList();
       })
